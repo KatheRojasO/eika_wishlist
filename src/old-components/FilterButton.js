@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 function FilterButton(props) {
+
   return (
     <div className="filters btn-group stack-exception">
 			<button 

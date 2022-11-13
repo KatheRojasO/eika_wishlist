@@ -1,107 +1,62 @@
-import React, { useState } from "react";
-import { nanoid } from "nanoid";
-import logo from './assets/logo.svg';
-import Wishlist from './components/Wishlist';
-import Form from "./components/Form";
-import FilterButton from "./components/FilterButton";
+import React, { useState, useEffect } from "react";
+import Header from "./components/Header";
+import Sort from "./components/Sort";
+import List from "./components/List";
+import AddItemForm from "./components/AddItemForm"
+import Filter from "./components/Filter"
 
-const FILTER_MAP = {
-  All: () => true,
-  Active: (task) => !task.completed,
-  Completed: (task) => task.completed
-};
+function App() {
+  const [list, setList] = useState(() => {
+    const saved = localStorage.getItem("shoppingList") 
+    return saved ? JSON.parse(saved) : []
+  });
 
-const FILTER_NAMES = Object.keys(FILTER_MAP);
+  const [showAll, setShowAll] = useState(() => {
+    const saved = localStorage.getItem("showAll") 
+    return saved ? JSON.parse(saved) : false
+  });
 
-function App(props) {
+  useEffect(() => {
+    localStorage.setItem("shoppingList", JSON.stringify(list))
+    localStorage.setItem("showAll", JSON.stringify(showAll))
+  }, [list, showAll])
 
-  const [items, setItems] = useState([]);
+  const addItem = (item) => {
+    setList([...list, item]);
+  };
 
-  const [filter, setFilter] = useState('All');
+  const onChecked = (itemIndex) => {
+    const updatedList = [...list];
+    updatedList[itemIndex].checked = true;
+    setList(updatedList);
+  };
 
-  const wishList = items
-    .filter(FILTER_MAP[filter])
-    .map((item) => (
-    <Wishlist 
-      id={item.id} 
-      name={item.name} 
-      completed={item.completed} 
-      key={item.id}
-      toggleItemBought={toggleItemBought}
-      deleteItem={deleteItem}
-      editItem={editItem}
-      />
-  ));
-
-
-  function addItem(name) {
-    const newItem = { id: `item-${nanoid()}`, name, completed: false };
-    setItems([...items, newItem]);
-    console.log(newItem)
-  }
-
-  const tasksNoun = wishList.length !== 1 ? 'tasks' : 'task';
-  const headingText = `${wishList.length} tasks remaining`;
-
-  function toggleItemBought(id) {
-    const updatedItems = items.map((item) => {
-      // if this task has the same ID as the edited task
-      if (id === item.id) {
-        // use object spread to make a new object
-        // whose `completed` prop has been inverted
-        return {...item, completed: !item.completed}
+  const sortByName = () => {
+    const sortedList = [...list];
+    sortedList.sort((a, b) => {
+      if (a.name < b.name) {
+        return -1;
+      } else if (a.name > b.name) {
+        return 1;
       }
-      return item;
+      return 0;
     });
-    setItems(updatedItems);
-    console.log(items)
-  }
+    setList(sortedList);
+  };
 
-  function deleteItem(id) {
-    const remainingItems = items.filter((item) => id !== item.id);
-    setItems(remainingItems);
-    console.log(id)
-  }
-
-  function editItem(id, newName) {
-    const editedItemList = items.map((item) => {
-    // if this task has the same ID as the edited task
-      if (id === item.id) {
-        //
-        return {...item, name: newName}
-      }
-      return item;
-    });
-    setItems(editedItemList);
-  }
-
-  const filterList = FILTER_NAMES.map((name) => (
-    <FilterButton 
-      key={name} 
-      name={name}
-      isPressed={name === filter}
-      setFilter={setFilter}
-      />
-  ));
+  const sortByPrice = () => {
+    const sortedList = [...list];
+    sortedList.sort((a, b) => a.price - b.price);
+    setList(sortedList);
+  };
 
   return (
     <div className="wishlist stack-large">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-      
-      <Form addItem={addItem} />
-      {filterList}
-        
-      <h2 id="list-heading">
-        {headingText}
-      </h2>
-      <ul
-        className="todo-list stack-large stack-exception"
-        aria-labelledby="list-heading"
-      >
-        {wishList}    
-      </ul>
+      <Header />
+      <Sort sortByName={sortByName} sortByPrice={sortByPrice} />
+      <List showAll={showAll} list={list} onChecked={onChecked} />
+      <AddItemForm addItem={addItem} />
+      <Filter showAll={showAll} onClick={() => setShowAll(!showAll)} />
     </div>
   );
 }
