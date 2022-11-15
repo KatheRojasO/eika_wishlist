@@ -1,0 +1,38 @@
+/*MAIN PAGE*/
+.main-paragraph{
+    font-family: 'NotoSants-regular';
+    font-size: 14px;  
+  }
+  
+  .header-container{
+    align-items: flex-start;
+    width: 400px;
+  }
+  
+  .app-image{
+    width: 400px;
+    margin-top: 0;
+  }
+  
+  .main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+  }
+  
+  .main-paragraph-container{
+    width: 350px;
+    margin-bottom: 20px;
+    text-align: center;  
+  }
+  
+  .add-button-main {
+    color: white;
+    background-color: #0058AB;
+    border: none;
+    padding: 10px 60px;
+    border-radius: 30px;
+    font-size: 14px; 
+    cursor: pointer;
+  }
+  

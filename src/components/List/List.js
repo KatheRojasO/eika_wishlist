@@ -1,5 +1,5 @@
 import React from "react";
-import ListItem from "./ListItem";
+import ListItem from "../ListItem/ListItem";
 
 export default function List({ showAll, list, onChecked }) {
   return (
@@ -16,7 +16,7 @@ export default function List({ showAll, list, onChecked }) {
             />
           )
       )}
-      {showAll && <hr />}
+      {showAll}
       {showAll &&
         list.map(
           (listItem, index) =>

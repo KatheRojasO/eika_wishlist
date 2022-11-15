@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import "./Filter.css"
 
 export default function Filter({ onClick, showAll }) {
     return (

@@ -1,4 +1,15 @@
 /* RESETS */
+
+@font-face {
+  font-family: 'NotoSants-regular';
+  src: url(../src/assets/fonts/NotoSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'NotoSants-bold';
+  src: url(../src/assets/fonts/NotoSans-Bold.ttf);
+}
+
 html {
   font: 62.5% / 1.15 sans-serif;
 }
@@ -15,9 +26,9 @@ body {
   width: 100%;
   max-width: 68rem;
   margin: 0 auto;
-  font: 1.6rem/1.25 Arial, sans-serif;
-  background-color: #f5f5f5;
-  color: #4d4d4d;
+  font: 1.6rem/1.25 'NotoSants-regular';
+  background-color: #FFFFFF;
+  color: #000000;
 }
 @media screen and (min-width: 620px) {
   body {
@@ -27,85 +38,4 @@ body {
 }
 /*END RESETS*/
 
-/* HEADER STYLES */
-.app-logo {
-  width: 150px;
-  padding-top: 25px;
-}
 
-.label-wrapper {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 25px;
-}
-
-/* SORT STYLES */
-.sort-container {
-  display: flex;
-  justify-content: center;
-  /* font-size: 19px; */
-}
-
-.sort-button {
-  margin-left: 20px;
-  text-decoration: underline;
-  border: none;
-  background: transparent;
-  color: gray;
-}
-
-.sort-label {
-  font-weight: bold;
-}
-
-/* ADD ITEM STYLES*/
-.add-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-}
-
-.add-input {
-  /* font-size: 19px; */
-  margin-right: 10px;
-}
-
-.add-button {
-  color: white;
-  background-color: #0058AB;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-}
-
-/* FILTER STYLES */
-.filter-container {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-}
-
-.filter-button {
-  margin-left: 20px;
-  text-decoration: underline;
-  border: none;
-  background: transparent;
-  color: gray;
-}
-
-/* LIST STYLES*/
-.list-item-row {
-  display: flex;
-}
-
-.list-item-text {
-  margin-left: 10px;
-}
-
-.list-item-text-done {
-  text-decoration: line-through;
-}
-
-.list-container {
-  margin-top: 20px;
-}

@@ -1,0 +1,20 @@
+/* LIST STYLES*/
+.list-item-row {
+  display: flex;
+  font-size: 14px;
+  margin-bottom: 20px
+
+}
+
+.list-item-text {
+  margin-left: 10px;
+}
+
+.list-item-text-done {
+  text-decoration: line-through;
+}
+
+.list-container {
+  margin-top: 20px; 
+  width: 400px;
+}

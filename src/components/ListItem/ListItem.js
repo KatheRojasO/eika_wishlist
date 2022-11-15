@@ -1,4 +1,5 @@
 import React from "react";
+import "./ListItem.css";
 
 export default function ListItem({ name, price, checked, onChange }) {
   return (

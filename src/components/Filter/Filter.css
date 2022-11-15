@@ -1,0 +1,18 @@
+/* FILTER STYLES */
+.filter-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+  }
+  
+  .filter-button {
+    margin-top: 20px;
+    margin-left: 20px;
+    text-decoration: underline;
+    border: none;
+    background: transparent;
+    color: gray;
+    cursor: pointer;
+  }
+  

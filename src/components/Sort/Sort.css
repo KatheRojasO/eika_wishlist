@@ -1,0 +1,21 @@
+/* SORT STYLES */
+.sort-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .sort-button {
+    margin-left: 20px;
+    text-decoration: underline;
+    border: none;
+    background: transparent;
+    color: gray;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .sort-label {
+    font-weight: bold;
+    font-size:14px;
+  }

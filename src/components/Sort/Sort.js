@@ -1,4 +1,5 @@
 import React from "react";
+import "./Sort.css";
 
 export default function Sort({ sortByName, sortByPrice }) {
   return (
