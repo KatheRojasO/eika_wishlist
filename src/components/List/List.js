@@ -1,6 +1,7 @@
 import React from "react";
 import ListItem from "../ListItem/ListItem";
 
+// This is the only bad code so far in your 
 export default function List({ showAll, list, onChecked }) {
   return (
     <div className="list-container">

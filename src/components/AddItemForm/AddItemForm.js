@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import "./AddItemForm.css"
+import "./AddItemForm.css";
 
 export default function AddItemForm({ addItem }) {
   const formRef = useRef(null);
