@@ -2,34 +2,29 @@ import React from "react";
 import ListItem from "../ListItem/ListItem";
 
 export default function List({ showAll, list, onChecked }) {
+  // Properties
+  const checkList = list.filter((item) => item.checked === false);
+  const uncheckList = list.filter((item) => item.checked === true);
+
+  // methods
+  function createList(list) {
+    return list.map((item, index) => (
+      <ListItem
+        key={`item-${index}`}
+        item={item}
+        onChange={() => onChecked(index)}
+      />
+    ));
+  }
+
+  // components
+  const listCheckedItems = createList(checkList);
+  const listUncheckedItems = createList(uncheckList);
+
   return (
     <div className="list-container">
-      {list.map(
-        (listItem, index) =>
-          !listItem.checked && (
-            <ListItem
-              key={`item-${index}`}
-              name={listItem.name}
-              price={listItem.price}
-              checked={listItem.checked}
-              onChange={() => onChecked(index)}
-            />
-          )
-      )}
-      {showAll}
-      {showAll &&
-        list.map(
-          (listItem, index) =>
-            listItem.checked && (
-              <ListItem
-                key={`item-${index}`}
-                name={listItem.name}
-                price={listItem.price}
-                checked={listItem.checked}
-                onChange={() => {}}
-              />
-            )
-        )}
+      {listCheckedItems}
+      {showAll && listUncheckedItems}
     </div>
   );
 }
