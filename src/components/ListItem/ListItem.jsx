@@ -8,7 +8,7 @@ export default function ListItem({ name, price, checked, onChange }) {
       <span
         className={`list-item-text ${checked ? "list-item-text-done" : ""}`}
       >
-        {name + ", " + price}
+        {name + ", " + price + ":-"}
       </span>
     </div>
   );

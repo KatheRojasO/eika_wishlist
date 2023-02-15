@@ -6,7 +6,7 @@ import AddItemForm from "../components/AddItemForm/AddItemForm";
 import Filter from "../components/Filter/Filter";
 import "./WishList.css"
 
-function WishList() {
+export default function WishList() {
   const [list, setList] = useState(() => {
     const saved = localStorage.getItem("shoppingList");
     return saved ? JSON.parse(saved) : []
@@ -54,7 +54,7 @@ function WishList() {
   return (
     <div className="wishlist-app">
       <div className='header-container'>
-        <Header/>
+        <Header title="EIKA's Shopping list"/>
       </div>
       <Sort sortByName={sortByName} sortByPrice={sortByPrice} />
       <List showAll={showAll} list={list} onChecked={onChecked} />
@@ -63,5 +63,3 @@ function WishList() {
     </div>
   );
 }
-
-export default WishList
