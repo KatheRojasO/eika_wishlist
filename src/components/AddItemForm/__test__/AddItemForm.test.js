@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, getByText } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import AddItemForm from "../AddItemForm";
 
@@ -68,6 +68,4 @@ describe("input testing", () => {
     fireEvent.change(inputElement, { target: { value: "-1" } });
     expect(inputElement).toBeInvalid();
   });
-
-  
 });
