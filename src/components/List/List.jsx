@@ -12,7 +12,7 @@ export default function List({ showAll, list, onChecked }) {
       <ListItem
         key={`item-${index}`}
         item={item}
-        onChange={() => onChecked(index)}
+        onChange={() => onChecked(item)}
       />
     ));
   }
