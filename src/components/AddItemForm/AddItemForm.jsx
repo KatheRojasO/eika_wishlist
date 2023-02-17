@@ -7,7 +7,7 @@ export default function AddItemForm({ addItem }) {
     e.preventDefault();
 
     const item = {
-      name: e.target["name"].value,
+      name: e.target["product"].value,
       price: e.target["price"].value,
       checked: false,
     };
@@ -24,7 +24,7 @@ export default function AddItemForm({ addItem }) {
     >
       <div className="container">
         <input
-          name="name"
+          name="product"
           className="add-input"
           type="text"
           placeholder="Name"

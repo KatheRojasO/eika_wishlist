@@ -40,7 +40,7 @@ describe("input testing", () => {
     fireEvent.change(priceInputElement, { target: { value: "123" } });
     fireEvent.submit(form, {
       target: {
-        name: { value: "Bed" },
+        product: { value: "Bed" },
         price: { value: "123" },
       },
     });
