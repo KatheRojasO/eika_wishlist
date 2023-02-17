@@ -2,7 +2,7 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import WishList from "../WishList";
 
-describe("ListItem testing", () => {
+describe("Wishlist testing", () => {
   it("should render an item when is added", async () => {
     render(<WishList />);
     const form = screen.getByRole("form");

@@ -1,22 +1,15 @@
 import React from "react";
 
+import { sortListByName, sortListByPrice } from './Sorter';
+
 export default function Sort({ list, setList }) {
   const sortByName = () => {
-    const sortedList = [...list];
-    sortedList.sort((a, b) => {
-      if (a.name < b.name) {
-        return -1;
-      } else if (a.name > b.name) {
-        return 1;
-      }
-      return 0;
-    });
+    const sortedList = sortListByName(list);
     setList(sortedList);
   };
 
   const sortByPrice = () => {
-    const sortedList = [...list];
-    sortedList.sort((a, b) => a.price - b.price);
+    const sortedList = sortListByPrice(list);
     setList(sortedList);
   };
 
