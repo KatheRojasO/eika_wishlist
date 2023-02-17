@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function ListItem({ item, onChange }) {
-  const { name, price, checked } = item;
+  const { product, price, checked } = item;
 
   return (
     <div className="list-item-row">
@@ -11,7 +11,7 @@ export default function ListItem({ item, onChange }) {
           data-testid="item-info"
           className={`list-item-text ${checked ? "list-item-text-done" : ""}`}
         >
-          {name + ", " + price + ":-"}
+          {product + ", " + price + ":-"}
         </span>
       </div>
     </div>

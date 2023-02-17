@@ -7,7 +7,7 @@ export default function AddItemForm({ addItem }) {
     e.preventDefault();
 
     const item = {
-      name: e.target["product"].value,
+      product: e.target["product"].value,
       price: e.target["price"].value,
       checked: false,
     };
