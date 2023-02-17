@@ -1,4 +1,4 @@
-function sortListByName(list) {
+export function sortListByName(list) {
     const sortedList = [...list];
     sortedList.sort((a, b) => {
     if (a.product < b.product) {
@@ -12,9 +12,8 @@ function sortListByName(list) {
     return sortedList
 }
 
-function sortListByPrice(list) {
+export function sortListByPrice(list) {
     const sortedList = [...list];
     return sortedList.sort((a, b) => a.price - b.price);
 }
 
-module.exports = {sortListByName, sortListByPrice};
