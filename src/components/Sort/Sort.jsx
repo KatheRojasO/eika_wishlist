@@ -1,8 +1,6 @@
 import React from "react";
-import "./Sort.css";
 
 export default function Sort({ list, setList }) {
-
   const sortByName = () => {
     const sortedList = [...list];
     sortedList.sort((a, b) => {
@@ -21,15 +19,18 @@ export default function Sort({ list, setList }) {
     sortedList.sort((a, b) => a.price - b.price);
     setList(sortedList);
   };
+
   return (
     <div className="sort-container">
-      <span className="sort-label">Sort by: </span>
-      <button className="sort-button" onClick={() => sortByName()}>
-        Name
-      </button>
-      <button className="sort-button" onClick={() => sortByPrice()}>
-        Price
-      </button>
+      <div className="container">
+        <span className="sort-label">Sort by: </span>
+        <button className="sort-button" onClick={() => sortByName()}>
+          Name
+        </button>
+        <button className="sort-button" onClick={() => sortByPrice()}>
+          Price
+        </button>
+      </div>
     </div>
   );
 }

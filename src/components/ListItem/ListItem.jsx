@@ -1,18 +1,19 @@
 import React from "react";
-import "./ListItem.css";
 
 export default function ListItem({ item, onChange }) {
   const { name, price, checked } = item;
 
   return (
     <div className="list-item-row">
-      <input onChange={onChange} type="checkbox" checked={checked} />
-      <span
-        data-testid="item-info"
-        className={`list-item-text ${checked ? "list-item-text-done" : ""}`}
-      >
-        {name + ", " + price + ":-"}
-      </span>
+      <div className="item-container">
+        <input onChange={onChange} type="checkbox" checked={checked} />
+        <span
+          data-testid="item-info"
+          className={`list-item-text ${checked ? "list-item-text-done" : ""}`}
+        >
+          {name + ", " + price + ":-"}
+        </span>
+      </div>
     </div>
   );
 }

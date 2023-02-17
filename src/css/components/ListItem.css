@@ -1,0 +1,22 @@
+.list-item-row {
+  width: 300px;
+}
+
+.list-item-row .item-container {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.list-item-text {
+  margin-left: 10px;
+}
+
+.list-item-text-done {
+  text-decoration: line-through;
+}
+
+@media screen and (min-width: 43rem) {
+  .list-item-row {
+    width: 500px;
+  }
+}

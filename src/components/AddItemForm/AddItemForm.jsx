@@ -1,12 +1,11 @@
 import React, { useRef } from "react";
-import "./AddItemForm.css";
 
 export default function AddItemForm({ addItem }) {
   const formRef = useRef(null);
 
   const submitHandler = (e) => {
     e.preventDefault();
-    
+
     const item = {
       name: e.target["name"].value,
       price: e.target["price"].value,
@@ -17,25 +16,32 @@ export default function AddItemForm({ addItem }) {
   };
 
   return (
-    <form onSubmit={submitHandler} aria-label="form" className="add-container" ref={formRef}>
-      <input
-        name="name"
-        className="add-input"
-        type="text"
-        placeholder="Name"
-        required
-      />
-      <input
-        name="price"
-        className="add-input"
-        type="number"
-        min="0"
-        placeholder="Price"
-        required
-      />
-      <button className="add-button" type="submit">
-        Add item
-      </button>
+    <form
+      onSubmit={submitHandler}
+      aria-label="form"
+      className="add-container"
+      ref={formRef}
+    >
+      <div className="container">
+        <input
+          name="name"
+          className="add-input"
+          type="text"
+          placeholder="Name"
+          required
+        />
+        <input
+          name="price"
+          className="add-input"
+          type="number"
+          min="0"
+          placeholder="Price"
+          required
+        />
+        <button className="add-button" type="submit">
+          Add item
+        </button>
+      </div>
     </form>
   );
 }

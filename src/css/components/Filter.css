@@ -1,0 +1,16 @@
+.filter-container .container {
+  display: flex;
+  justify-content: center;
+  padding: 0 var(--space-big);
+}
+
+.filter-button {
+  margin-top: 20px;
+  margin-left: 20px;
+  text-decoration: underline;
+  border: none;
+  background: transparent;
+  color: gray;
+  cursor: pointer;
+  font-family: "Poppins";
+}

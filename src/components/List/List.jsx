@@ -23,8 +23,10 @@ export default function List({ showAll, list, onChecked }) {
 
   return (
     <div className="list-container">
-      {listCheckedItems}
-      {showAll && listUncheckedItems}
+      <div className="container">
+        {listCheckedItems}
+        {showAll && listUncheckedItems}
+      </div>
     </div>
   );
 }

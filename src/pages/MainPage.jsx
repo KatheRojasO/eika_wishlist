@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import eika_main from "../assets/eika_main.jpg";
 import Header from "../components/Header/Header";
-import "./MainPage.css";
 
 export default function MainPage() {
   const navigate = useNavigate();

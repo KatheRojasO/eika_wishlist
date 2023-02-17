@@ -1,0 +1,53 @@
+.add-container .container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 var(--space-big);
+}
+
+.add-input {
+  font-family: "Poppins";
+  margin: 5px 0;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.add-button {
+  color: white;
+  background-color: #0058ab;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-family: "Poppins";
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background-color: #ffcc00;
+  color: white;
+}
+
+@media screen and (min-width: 26rem) {
+  .add-container .container {
+    align-items: center;
+  }
+
+  .add-input {
+    width: 300px;
+  }
+
+  .add-button {
+    width: 250px;
+  }
+}
+
+@media screen and (min-width: 43rem) {
+  .add-container .container {
+    flex-direction: row;
+  }
+
+  .add-input {
+    margin-right: 20px;
+  }
+}
